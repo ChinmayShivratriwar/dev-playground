@@ -57,6 +57,15 @@ public class IntermediateOps {
         List<String> peekedWords = words.stream().peek(x -> System.out.println("Processing word: " + x)).toList();
         System.out.println(peekedWords);
 
+        //Lets try function of peek using map
+        List<String> peekedWordsUsingMap = words.stream()
+            .map(x -> {
+                System.out.println("Mapping word: " + x);
+                return x.toUpperCase();
+            })
+            .toList();
+        System.out.println("Peek using map " +  peekedWordsUsingMap);
+
         // 8. FlatMap
         // FlatMap is used to flatten a stream of streams into a single stream
         //FlatMap has function, that means primary function of function is to take an input and produce an output
