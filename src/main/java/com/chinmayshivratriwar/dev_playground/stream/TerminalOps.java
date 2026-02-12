@@ -53,5 +53,17 @@ public class TerminalOps {
         //the final result. Examples include collect, reduce, and toArray.
         //Stateless terminal operations do not need to maintain any state information from previously seen elements.
         //Examples include forEach, count, anyMatch, allMatch, noneMatch, findFirst, and findAny.
+
+        //6. toArray
+        Object[] wordsArray = words.stream().toArray();
+        for (Object word : wordsArray) {
+            System.out.println(word);
+        }
+
+        //7. min, max
+        String minWord = words.stream().min(String::compareTo).orElse("No words found");
+        String maxWord = words.stream().max(String::compareTo).orElse("No words found");
+        System.out.println("Min word: " + minWord);
+        System.out.println("Max word: " + maxWord); 
     }
 }
