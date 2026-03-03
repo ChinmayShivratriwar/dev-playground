@@ -1,17 +1,20 @@
 package com.chinmayshivratriwar.dev_playground.cses;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class IncreasingArray {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        long n = sc.nextLong();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        long n = Long.parseLong(br.readLine());
+        String[] numbers = br.readLine().split(" ");  // Read all at once
         List<BigInteger> arr = new ArrayList<>();
-        for(long i = 0; i < n; i++){
-            arr.add(BigInteger.valueOf(sc.nextLong()));
+        for(int i = 0; i < n; i++){
+            arr.add(BigInteger.valueOf(Long.parseLong(numbers[i])));  // Direct string-to-long parsing
         }
         System.out.println(makeIncreasing(arr));
     }
